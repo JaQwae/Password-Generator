@@ -2,7 +2,7 @@
 
 
 // Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+let generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
@@ -11,8 +11,8 @@ function writePassword() {
   welcomeMessage()
   selectingNumberOfCharacters()
 
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
@@ -53,7 +53,14 @@ function selectingNumberOfCharacters() {
 //Generating random lower case letter
 function randomLowerCase(){
   //this selects a random whole number and displays the corresponding character on char code
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
-console.log(randomLowerCase());
+//Generating random upper case letter
+function randomUpperCase(){
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+
+//Generating random characters
+//function specialCharacters () {}
+//console.log(());
