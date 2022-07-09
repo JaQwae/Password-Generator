@@ -23,7 +23,7 @@ generateBtn.addEventListener("click", writePassword);
 
 //Welcome message
 function welcomeMessage(){
-  let intro = alert('Hello, welcome to password generator. This program will allow you to randomly generate a password within the criteria you select. Press okay to get started')
+  let intro = alert('Hello, welcome to password generator. This program will allow you to randomly generate a password within the criteria you select. Press okay to continue')
 }
 
 //User selecting number of characters
@@ -40,9 +40,9 @@ function selectingNumberOfCharacters() {
       selectingNumberOfCharacters()
     
       //setting condition that only allow numbers
-    }//else if (numbersSelected == ){
-      //alert('Not a valid input, please enter a number')
-      //selectingNumberOfCharacters()}
+    }else if (numbersSelected == NaN ){
+      alert('Not a valid input, please enter a number')
+      selectingNumberOfCharacters()}
     
     else{
         return numberselected;
