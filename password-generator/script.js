@@ -15,22 +15,24 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
 
 //Welcome message
 function welcomeMessage(){
   let intro = alert('Hello, welcome to password generator. This program will allow you to randomly generate a password within the criteria you select. Press okay to continue')
 }
 
+
 //User selecting number of characters
 function selectingNumberOfCharacters() {
   //converting input from a string to an integer
   let numbersSelected = parseInt(prompt('Please enter the number of characters that you would like your password to be. (Min=8 and Max=128)')
   );
+
     //make it so only numbers inputs are accept
     if (Number.isNaN(numbersSelected)) {
       alert('Not a valid input, please enter a number')
@@ -44,6 +46,14 @@ function selectingNumberOfCharacters() {
         selectingNumberOfCharacters();
       
       }else{
-        return numberselected;
+        return numbersSelected;
       }
 }
+
+//Generating random lower case letter
+function randomLowerCase(){
+  //this selects a random whole number and displays the corresponding character on char code
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+}
+
+console.log(randomLowerCase());
