@@ -28,23 +28,22 @@ function welcomeMessage(){
 
 //User selecting number of characters
 function selectingNumberOfCharacters() {
-  
-  let numbersSelected = prompt('Please enter the number of characters that you would like your password to be. (Min=8 and Max=128)') 
-
-    if (numbersSelected < 8) {
-      alert('Password length is too short, please enter a number that is at least 8.')
-      selectingNumberOfCharacters()
-    
-    }else if (numbersSelected > 128) {
-      alert('Password length is too long, please enter a number that is less than 129.')
-      selectingNumberOfCharacters()
-    
-      //setting condition that only allow numbers
-    }else if (numbersSelected == NaN ){
+  //converting input from a string to an integer
+  let numbersSelected = parseInt(prompt('Please enter the number of characters that you would like your password to be. (Min=8 and Max=128)')
+  );
+    //make it so only numbers inputs are accept
+    if (Number.isNaN(numbersSelected)) {
       alert('Not a valid input, please enter a number')
-      selectingNumberOfCharacters()}
-    
-    else{
+      selectingNumberOfCharacters()
+    }if (numbersSelected < 8) {
+        alert('Password length is too short, please enter a number that is at least 8.');
+        selectingNumberOfCharacters();
+      
+      }else if (numbersSelected > 128) {
+        alert('Password length is too long, please enter a number that is less than 129.');
+        selectingNumberOfCharacters();
+      
+      }else{
         return numberselected;
       }
 }
