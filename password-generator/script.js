@@ -62,5 +62,9 @@ function randomUpperCase(){
 }
 
 //Generating random characters
-//function specialCharacters () {}
-//console.log(());
+function specialCharacters() {
+  let specialCharacterArray = ['!', '@', '#', '$', '%', '&', '*', '-', '.', '^', '<', '>',',',':', ';'];
+  return specialCharacterArray.toString(Math.floor(Math.random() * specialCharacterArray.length));
+}
+
+console.log(specialCharacters());
