@@ -57,23 +57,25 @@ function generatePassword() {
       var confirmSpecialCharacter = confirm('Click OK for your password to contain SPECIAL characters.');
   }
 
+  choices = [];
   //Adds selected character type to an empty array
   function selectedChoice () {
     if (confirmSpecialCharacter === true ) {
-      choices = choices.push(confirmSpecialCharacter) }
+      choices = choices.push('yes this work') };
 
     if (confirmUpperCase === true ) {
-      choices = choices.push(confirmCharacter) }
+      choices = choices.push(confirmCharacter) };
 
     if (confirmLowerCase === true ) {
-      choices = choices.push(confirmLowercase) }
+      choices = choices.push(confirmLowercase) };
     
     if (confirmNumber === true ) {
-      choices = choices.push(confirmLowercase) }
+      choices = choices.push(confirmLowercase) };
     
   }
-  choices = [];
-  console.log(choices)
+  
+  choices.push('yes this works')
+  console.log(choices);
   finalPassword = [];
 }
 
