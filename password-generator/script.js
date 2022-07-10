@@ -6,10 +6,10 @@ var confirmNumber;
 var confirmCharacter;
 var confirmLowercase;
 var confirmUppercase;
-var upperArr = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
-var lowerArr = "abcdefghijklmnopqrstuvwxyz";
-var numbersArr = "0123456789";
-var specialArr = '!@#$%^&*(){}[]=<>/;.';
+var upperArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var lowerArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var numbersArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var specialArr = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '+', '<', '>', ',', '.'];
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -44,7 +44,7 @@ function generatePassword() {
   alert('Your password will contain ' + confirmLength + ' characters');
 
   var confirmUpperCase = confirm('Click OK for your password to contain UPPERCASE letters.');
-  var confirmLowerCase = confirm('Click OK for your password to contain LOWERCASE letters.')
+  var confirmLowerCase = confirm('Click OK for your password to contain LOWERCASE letters.');
   var confirmNumericCharacter = confirm('Click OK for your password to contain NUMBERS.');
   var confirmSpecialCharacter = confirm('Click OK for your password to contain SPECIAL characters.');
 
@@ -52,34 +52,36 @@ function generatePassword() {
   while (confirmUpperCase === false && confirmLowerCase === false && confirmNumericCharacter === false && confirmSpecialCharacter === false) {
       alert('You must choose at lease one parameter');
       var confirmUpperCase = confirm('Click OK for your password to contain UPPERCASE letters.');
-      var confirmLowerCase = confirm('Click OK for your password to contain LOWERCASE letters.')
+      var confirmLowerCase = confirm('Click OK for your password to contain LOWERCASE letters.');
       var confirmNumericCharacter = confirm('Click OK for your password to contain NUMBERS.');
       var confirmSpecialCharacter = confirm('Click OK for your password to contain SPECIAL characters.');
   }
 
-  var finalPassword = '';
+  var finalPassword = [];
 
-  //Adds selected character type to an empty array, all possible combinations
-  function selectedChoice () {
+  //Adds selected character type to an empty array, all possible combinations (*talk with tutor it see why function was mking this undefine*)
     if (confirmSpecialCharacter=== true ) {
-      finalPassword.push(specialArr) }; 
+      finalPassword = finalPassword.concat(specialArr) }; 
 
     if (confirmUpperCase=== true ) {
-      finalPassword.push(upperArr) }; 
+      finalPassword = finalPassword.concat(upperArr) }; 
 
     if (confirmLowerCase=== true ) {
-      finalPassword.push(lowerArr) }; 
+      finalPassword = finalPassword.concat(lowerArr) }; 
     
     if (confirmNumber=== true ) {
-      finalPassword.push(numberArr) }; 
-  }
+      finalPassword = finalPassword.concat(numberArr) }; 
+    
+  console.log(finalPassword)
 
   var randomPassword = ''
 
   for (var i = 0; i < confirmLength; i++) {
     randomPassword = randomPassword + finalPassword[Math.floor(Math.random() * finalPassword.length)];
-    }
-    return randomPassword;
+    
+  }
+  console.log(randomPassword)
+  return randomPassword;
 }
 
 
