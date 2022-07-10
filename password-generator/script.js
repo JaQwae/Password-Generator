@@ -10,6 +10,12 @@ function writePassword() {
   //inputting the number of character selected
   welcomeMessage()
   selectingNumberOfCharacters()
+  //start construction of the string
+  //allow user to selected uppercase, lowercase,....
+  selectDifferentTypes()
+  //build on string until character count is meet for each element that was selected
+  //terminate once length is met
+  //display password in text box
 
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
@@ -49,6 +55,15 @@ function selectingNumberOfCharacters() {
         return numbersSelected;
       }
 }
+
+//Selecting the different types of characters that go in the password
+function selectDifferentTypes() {
+  let includeLowerCase = confirm('Do you want to include lower case letters?')
+  let includeUpperCase = confirm('Do you want to include upper case letters?')
+  let includeSpecialCharacters = confirm('Do you want to include special characters?')
+  let includeNumbers = confirm('Do you want to include numbers?')
+}
+
 
 //Generating random lower case letter
 function randomLowerCase(){
