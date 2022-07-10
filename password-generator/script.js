@@ -6,10 +6,10 @@ var confirmNumber;
 var confirmCharacter;
 var confirmLowercase;
 var confirmUppercase;
-var lower = randomLowerCase();
-var upper = randomUpperCase();
-var character = randomSpecialCharacter();
-var number = randomNumber();
+var upperArr = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
+var lowerArr = "abcdefghijklmnopqrstuvwxyz";
+var numbersArr = "0123456789";
+var specialArr = '!@#$%^&*(){}[]=<>/;.';
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -57,25 +57,24 @@ function generatePassword() {
       var confirmSpecialCharacter = confirm('Click OK for your password to contain SPECIAL characters.');
   }
 
-  choices = [];
-  //Adds selected character type to an empty array
+  //Adds selected character type to an empty array, all possible combinations
   function selectedChoice () {
-    if (confirmSpecialCharacter === true ) {
-      choices = choices.push('yes this work') };
+    if (confirmSpecialCharacter=== true ) {
+      finalPassword.push(SpecialArr) }; 
 
-    if (confirmUpperCase === true ) {
-      choices = choices.push(confirmCharacter) };
+    if (confirmUpperCase=== true ) {
+      finalPassword.push(upperArr) }; 
 
-    if (confirmLowerCase === true ) {
-      choices = choices.push(confirmLowercase) };
+    if (confirmLowerCase=== true ) {
+      finalPassword.push(lowerArr) }; 
     
-    if (confirmNumber === true ) {
-      choices = choices.push(confirmLowercase) };
-    
+    if (confirmNumber=== true ) {
+      finalPassword.push(numberArr) }; 
+  
   }
   
-  choices.push('yes this works')
-  console.log(choices);
+  for(var i = 0; i < confirmLength; i++)
+
   finalPassword = [];
 }
 
@@ -157,30 +156,30 @@ function generatePassword() {
 
 
 
-//****is there a way to include these into conditional statements, how can I make this equal to choices */
-//Generating random lower case letter
-function randomLowerCase(){
-  //this selects a random lower case letter
- return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
+// //****is there a way to include these into conditional statements, how can I make this equal to choices */
+// //Generating random lower case letter
+// function randomLowerCase(){
+//   //this selects a random lower case letter
+//  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+// }
 
-//Generating random upper case letter
-function randomUpperCase(){
-  //this selects a random upper case letter
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
+// //Generating random upper case letter
+// function randomUpperCase(){
+//   //this selects a random upper case letter
+//   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+// }
 
-//Generating random characters
-function randomSpecialCharacter() {
-  let specialCharacters = ['!', '@', '#', '$', '%', '&', '*', '-', '.', '^', '<', '>',',',':', ';'];
-  //this selects a random special character
-  return specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
-  }
+// //Generating random characters
+// function randomSpecialCharacter() {
+//   let specialCharacters = ['!', '@', '#', '$', '%', '&', '*', '-', '.', '^', '<', '>',',',':', ';'];
+//   //this selects a random special character
+//   return specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+//   }
 
-//Generating random numbers
-function randomNumber() {
-  //this selects a random number
- return Math.floor(Math.random() * 9)
-}
+// //Generating random numbers
+// function randomNumber() {
+//   //this selects a random number
+//  return Math.floor(Math.random() * 9)
+// }
 
 
