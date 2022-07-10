@@ -57,17 +57,24 @@ function generatePassword() {
       var confirmSpecialCharacter = confirm('Click OK for your password to contain SPECIAL characters.');
   }
 
-  choices = '';
+  //Adds selected character type to an empty array
+  function selectedChoice () {
+    if (confirmSpecialCharacter === true ) {
+      choices = choices.push(confirmSpecialCharacter) }
 
-  //if all options selected
-  if (confirmCharacter === true && confirmNumber === true && confirmUppercase === true && confirmLowercase === true) {
-    alert('Your password will be composed of special characters, numbers, and upper and lowercase letters')
+    if (confirmUpperCase === true ) {
+      choices = choices.push(confirmCharacter) }
+
+    if (confirmLowerCase === true ) {
+      choices = choices.push(confirmLowercase) }
+    
+    if (confirmNumber === true ) {
+      choices = choices.push(confirmLowercase) }
+    
   }
-  while (confirmCharacter === true && confirmNumber === true && confirmUppercase === true && confirmLowercase === true) {
-      for (var i = 0; i < confirmLength.length; i++) {
-        choices = character.concat(number, character, upper, lower);
-    }
-  }
+  choices = [];
+  console.log(choices)
+  finalPassword = [];
 }
 
 
