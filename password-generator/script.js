@@ -59,7 +59,7 @@ function generatePassword() {
 
   var finalPassword = [];
 
-  //Adds selected character type to an empty array, all possible combinations (*talk with tutor it see why function was mking this undefine*)
+  //Adds selected character type to an empty array, all possible combinations (*talk with tutor it see why function was making this undefine also why concat*)
     if (confirmSpecialCharacter=== true ) {
       finalPassword = finalPassword.concat(specialArr) }; 
 
@@ -72,7 +72,7 @@ function generatePassword() {
     if (confirmNumber=== true ) {
       finalPassword = finalPassword.concat(numberArr) }; 
     
-  console.log(finalPassword)
+  
 
   var randomPassword = ''
 
@@ -80,36 +80,8 @@ function generatePassword() {
     randomPassword = randomPassword + finalPassword[Math.floor(Math.random() * finalPassword.length)];
     
   }
-  console.log(randomPassword)
+  
   return randomPassword;
 }
-
-
-
-// //****is there a way to include these into conditional statements, how can I make this equal to choices */
-// //Generating random lower case letter
-// function randomLowerCase(){
-//   //this selects a random lower case letter
-//  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-// }
-
-// //Generating random upper case letter
-// function randomUpperCase(){
-//   //this selects a random upper case letter
-//   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-// }
-
-// //Generating random characters
-// function randomSpecialCharacter() {
-//   let specialCharacters = ['!', '@', '#', '$', '%', '&', '*', '-', '.', '^', '<', '>',',',':', ';'];
-//   //this selects a random special character
-//   return specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
-//   }
-
-// //Generating random numbers
-// function randomNumber() {
-//   //this selects a random number
-//  return Math.floor(Math.random() * 9)
-// }
 
 
