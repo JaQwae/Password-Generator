@@ -60,7 +60,7 @@ function generatePassword() {
   //Adds selected character type to an empty array, all possible combinations
   function selectedChoice () {
     if (confirmSpecialCharacter=== true ) {
-      finalPassword.push(SpecialArr) }; 
+      finalPassword.push(specialArr) }; 
 
     if (confirmUpperCase=== true ) {
       finalPassword.push(upperArr) }; 
@@ -70,12 +70,14 @@ function generatePassword() {
     
     if (confirmNumber=== true ) {
       finalPassword.push(numberArr) }; 
-  
   }
-  
-  for(var i = 0; i < confirmLength; i++)
 
   finalPassword = [];
+
+  function randomCharacterSelect () {
+    for(var i = 0; i < confirmLength.length; i++){
+      Math.floor(Math.random())
+  }
 }
 
 
