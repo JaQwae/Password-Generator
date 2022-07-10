@@ -59,25 +59,32 @@ function generatePassword() {
 
       //character, uppercase, lowercase options selected
       else if (confirmCharacter && confirmUppercase && confirmLowercase) {
-        choices = character.concat(number, character, upper);
+        choices = character.concat(upper, lower);
       }
 
       //character, number, uppercase options selected
       else if (confirmCharacter && confirmNumber && confirmUppercase) {
-        choices = character.concat(number, character, upper);
+        choices = character.concat(number, upper);
       }
 
       //character, number, lowercase options selected
       else if (confirmCharacter && confirmNumber && confirmLowercase) {
-        choices = character.concat(number, character, lower);
+        choices = character.concat(number, lower);
       }
 
       //number, upper and lowercase options selected
       else if (confirmNumber && confirmUppercase && confirmLowercase) {
-        choices = character.concat(number, upper, lower);
+        choices = number.concat(upper, lower);
+      }
+
+      //character and uppercase options selected
+      else if (confirmCharacter && confirmUppercase) {
+        choices = character.concat(upper);
       }
 }
 
+//empty string for confirm choice to build into*******?
+var password =''
 
 //****is there a way to include these into conditional statements, how can I make this equal to choices */
 //Generating random lower case letter
