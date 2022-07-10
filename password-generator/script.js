@@ -57,6 +57,8 @@ function generatePassword() {
       var confirmSpecialCharacter = confirm('Click OK for your password to contain SPECIAL characters.');
   }
 
+  var finalPassword = '';
+
   //Adds selected character type to an empty array, all possible combinations
   function selectedChoice () {
     if (confirmSpecialCharacter=== true ) {
@@ -72,89 +74,13 @@ function generatePassword() {
       finalPassword.push(numberArr) }; 
   }
 
-  finalPassword = [];
+  var randomPassword = ''
 
-  function randomCharacterSelect () {
-    for(var i = 0; i < confirmLength.length; i++){
-      Math.floor(Math.random())
-  }
+  for (var i = 0; i < confirmLength; i++) {
+    randomPassword = randomPassword + finalPassword[Math.floor(Math.random() * finalPassword.length)];
+    }
+    return randomPassword;
 }
-
-
-
-
-
-//       //character, uppercase, lowercase options selected
-//       else if (confirmCharacter && confirmUppercase && confirmLowercase) {
-//         choices = character.concat(upper, lower);
-//       }
-
-//       //character, number, uppercase options selected
-//       else if (confirmCharacter && confirmNumber && confirmUppercase) {
-//         choices = character.concat(number, upper);
-//       }
-
-//       //character, number, lowercase options selected
-//       else if (confirmCharacter && confirmNumber && confirmLowercase) {
-//         choices = character.concat(number, lower);
-//       }
-
-//       //number, upper and lowercase options selected
-//       else if (confirmNumber && confirmUppercase && confirmLowercase) {
-//         choices = number.concat(upper, lower);
-//       }
-
-//       //character and uppercase options selected
-//       else if (confirmCharacter && confirmUppercase) {
-//         choices = character.concat(upper);
-//       }
-
-//        //character and lowercase options selected
-//       else if (confirmCharacter && confirmLowercase) {
-//         choices = character.concat(lower);
-//       }
-
-//        //character and number options selected
-//       else if (confirmCharacter && confirmNumber) {
-//         choices = character.concat(number);
-//       }
-
-//        //upper and lowercase options selected
-//       else if (confirmUpper && confirmLowercase) {
-//         choices = upper.concat(lower);
-//       }
-
-//        //upper and number options selected
-//       else if (confirmUpper && confirmNumber) {
-//         choices = upper.concat(number);
-//       }
-
-//        //lower and number options selected
-//       else if (confirmLowercase && confirmNumber) {
-//         choices = lower.concat(number);
-//       }
-
-//        //only character selected
-//       else if (confirmCharacter) {
-//         choices = character.concat(character);
-//       }
-
-//       //only uppercase selected
-//       else if (confirmUppercase) {
-//         choices = upper.concat(upper);
-//       }
-
-//       //only lowercase selected
-//       else if (confirmLowercase) {
-//         choices = lower.concat(lower);
-//       }
-
-//        //only number selected
-//       else if (confirmNumber) {
-//         choices = number.concat(number);
-//       }
-
-// }
 
 
 
