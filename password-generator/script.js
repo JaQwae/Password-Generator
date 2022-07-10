@@ -11,8 +11,8 @@ function writePassword() {
   welcomeMessage()
   selectingNumberOfCharacters()
   //start construction of the string
-  //allow user to selected uppercase, lowercase,....
   selectDifferentTypes()
+    //allow user to selected uppercase, lowercase,....
   //build on string until character count is meet for each element that was selected
   //terminate once length is met
   //display password in text box
@@ -62,27 +62,29 @@ function selectDifferentTypes() {
   let includeUpperCase = confirm('Do you want to include upper case letters?')
   let includeSpecialCharacters = confirm('Do you want to include special characters?')
   let includeNumbers = confirm('Do you want to include numbers?')
-}
-
 
 //Generating random lower case letter
 function randomLowerCase(){
-  //this selects a random whole number and displays the corresponding character on char code
+  //this selects a random lower case letter
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
 //Generating random upper case letter
 function randomUpperCase(){
+  //this selects a random upper case letter
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
 
 //Generating random characters
 function randomSpecialCharacter() {
   let specialCharacters = ['!', '@', '#', '$', '%', '&', '*', '-', '.', '^', '<', '>',',',':', ';'];
+  //this selects a random special character
   return specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
-}
+  }
 
 //Generating random numbers
 function randomNumber() {
+  //this selects a random number
   return Math.floor(Math.random() * 9)
+  }
 }
