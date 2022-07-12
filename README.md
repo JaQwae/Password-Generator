@@ -32,8 +32,10 @@ What's to come:
 
 ## Images
 
-  
-  
+![Program screen before generate password is clicked](./images/passwordGeneratorBefore.png);
+
+
+![Program screen before generate password is clicked](./images/passwordGeneratorAfter.png);
 
 ## Credits
 
