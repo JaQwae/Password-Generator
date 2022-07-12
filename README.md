@@ -28,6 +28,8 @@ What's to come:
 
 - Adding a copy to clipboard function
 
+- A function that clears out the password with out restarting the whole process
+
   
 
 ## Images
